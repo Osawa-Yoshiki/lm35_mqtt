@@ -3,7 +3,7 @@
 #define PIN3 6      //モーター用その②
 #define PWM1 7      //モーター用その③
 #define PIN4 2      //LED用
-#define MEAN 10     //移動平均を出すまでのサンプリング数を指定します。
+#define MEAN 100     //移動平均を出すまでのサンプリング数を指定します。
 
 #include <ArduinoJson.h>                                 
 #include <Ethernet.h>
@@ -16,8 +16,8 @@ boolean calibration_done = false;
 
 //MACアドレスとMQTTブローカー設定
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0x01, 0x05, 0x61 };    // 自身のEtherernet Sheild の MACアドレス に変更
-byte server[]   = { 123, 123, 123, 123 };                   // Mosquittoが実行されているPCのIPアドレス に変更
-
+byte server[]   = { 35, 200, 13, 170 };                   // Mosquittoが実行されているPCのIPアドレス に変更
+s
 //送信用JSONの初期設定
 DynamicJsonBuffer jsonBuffer;
 char json[] =
